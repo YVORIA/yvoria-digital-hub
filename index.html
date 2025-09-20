@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YVORIA - Official Landing Page</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* 🌐 General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+      scroll-behavior: smooth;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* 🌐 Header / Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #00bcd4;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00bcd4;
+    }
+
+    /* 🌐 Mobile Menu Button */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      background: #fff;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+
+    /* 🌐 Hero Section */
+    .hero {
+  background: url('images/file_000000000e7c61f8a9e6cbaaf873e4b5\ \(1\).png') center center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+/* Overlay add kar ke readability improve */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark shade for text contrast */
+}
+
+.hero div {
+  position: relative;
+  z-index: 1; /* taa ke text overlay ke upar dikhay */
+}
+    
+
+  .hero h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #1e3a8a; /* Dark Blue fill */
+  -webkit-text-stroke: 1px #fff; /* White border outline */
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6); /* extra depth */
+}
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+    .btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background: #00bcd4;
+      color: #fff;
+      border-radius: 25px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #0097a7;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 🌐 Section Styling */
+    section {
+      padding: 80px 50px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: #271269;
+      position: relative;
+    }
+
+    section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #00bcd4;
+      margin: 10px auto 0;
+    }
+
+    /* 🌐 About Section */
+    .about {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .about img {
+      flex: 1 1 400px;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .about-text {
+      flex: 1 1 400px;
+    }
+
+    /* 🌐 Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .service {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+    }
+
+    /* 🌐 Skills */
+    .skills .skill {
+      margin-bottom: 20px;
+    }
+
+    .skills .bar {
+      height: 10px;
+      background: #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .skills .bar span {
+      display: block;
+      height: 100%;
+      background: #00bcd4;
+    }
+
+    /* 🌐 Founder */
+    .founder {
+      text-align: center;
+    }
+
+    .founder img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #00bcd4;
+    }
+
+    /* 🌐 Contact */
+    .contact form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact input, .contact textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 100%;
+    }
+
+    .contact button {
+      background: #00bcd4;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .contact button:hover {
+      background: #0097a7;
+    }
+
+    /* 🌐 Footer */
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    /* 🌐 Responsive */
+    @media (max-width: 768px) {
+      header { padding: 15px 25px; }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 25px;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      nav ul.active { display: flex; }
+      .menu-toggle { display: flex; }
+      .about { flex-direction: column; }
+    }
+    /* 🌐 Social Buttons */
+.social-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-buttons .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  text-align: center;
+}
+
+/* Different colors for each */
+.btn.whatsapp {
+  background: #25D366;
+}
+.btn.whatsapp:hover {
+  background: #1da851;
+}
+
+.btn.linkedin {
+  background: #0077b5;
+}
+.btn.linkedin:hover {
+  background: #005f87;
+}
+
+.btn.fiverr {
+  background: #1dbf73;
+}
+.btn.fiverr:hover {
+  background: #178f57;
+}
+  </style>
+</head>
+<body>
+
+  <!-- 🌐 Header -->
+  <header>
+    <h1>YVORIA</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#founder">Founder</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- 🌐 Hero -->
+  <section class="hero" id="home">
+    <div>
+      <h2>Welcome to YVORIA</h2>
+      <p>Empowering individuals with freelancing & digital skills</p>
+      <a href="#contact" class="btn">Get Started</a>
+    </div>
+  </section>
+
+  <!-- 🌐 About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="about">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="About YVORIA">
+      <div class="about-text">
+        <p>YVORIA is a digital brand dedicated to helping individuals grow in freelancing, IT, and business. 
+        We focus on providing knowledge, resources, and mentorship to unlock potential.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌐 Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Web Development</h3>
+        <p>Modern and responsive websites built with the latest technologies.</p>
+      </div>
+      <div class="service">
+        <h3>Freelancing Mentorship</h3>
+        <p>Guiding beginners to establish careers in freelancing platforms.</p>
+      </div>
+      <div class="service">
+        <h3>Business Branding</h3>
+        <p>Helping you launch and grow your own brand with premium strategies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌐 Skills -->
+  <section id="skills" class="skills">
+    <h2>Our Skills</h2>
+    <div class="skill">
+      <p>Web Development</p>
+      <div class="bar"><span style="width: 90%"></span></div>
+    </div>
+    <div class="skill">
+      <p>Freelancing Guidance</p>
+      <div class="bar"><span style="width: 85%"></span></div>
+    </div>
+    <div class="skill">
+      <p>Business Strategy</p>
+      <div class="bar"><span style="width: 80%"></span></div>
+    </div>
+  </section>
+
+  <!-- 🌐 Founder -->
+  <section id="founder" class="founder">
+    <h2>Founder</h2>
+    <img src="images/founder.jpg" alt="Founder">
+    <h3>Yasir Ashraf</h3>
+    <p>Founder & Visionary of YVORIA, dedicated to empowering youth with freelancing and business skills.</p>
+  </section>
+
+  <!-- 🌐 Contact -->
+  <!-- 🌐 Contact -->
+  
+   <section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <form action="https://formspree.io/f/meolbyqv" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+    <!-- 🌐 Social Buttons Section -->
+    <div class="social-buttons">
+      <a href="https://wa.me/923157041695" target="_blank" class="btn whatsapp">
+        📱 WhatsApp
+      </a>
+      <a href="https://www.linkedin.com/in/yvoria" target="_blank" class="btn linkedin">
+        💼 LinkedIn
+      </a>
+      <a href="https://www.fiverr.com/s/wkoRb0g" target="_blank" class="btn fiverr">
+        🎯 Fiverr
+      </a>
+    </div>
+  </section>
+  <!-- 🌐 Footer -->
+  <footer>
+    <p>&copy; 2025 YVORIA. All Rights Reserved.</p>
+  </footer>
+
+  <!-- 🌐 JavaScript -->
+  <script>
+    function toggleMenu() {
+      document.querySelector("nav ul").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
