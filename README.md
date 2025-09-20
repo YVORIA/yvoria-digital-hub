@@ -9,4 +9,4 @@ We empower *freelancers, students, and entrepreneurs* with skills and opportunit
 - Digital success through learning  
 
 ## 🔗 Live Website
-[Visit YVORIA Website](https://USERNAME.github.io/REPO-NAME/)
+[Visit YVORIA Website](https://YVORIA.github.io/yvoria-digital-hub/)
